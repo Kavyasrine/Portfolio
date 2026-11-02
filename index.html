@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kavyasri | Software Developer & AI Enthusiast</title>
+  <meta name="description" content="Portfolio of Kavyasri, IT graduate building software and AI projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#home">Skip to content</a>
+
+  <!-- Loading screen -->
+  <div id="loader" role="status" aria-live="polite">
+    <div class="loader-stage avatar-slot" data-avatar data-pose="type"></div>
+    <p id="loader-text"></p>
+    <div class="bar"><span id="bar-fill"></span></div>
+  </div>
+
+  <!-- One avatar drawing, cloned into the loader, hero, and walking figure -->
+  <template id="avatar-tpl">
+    <svg class="av" viewBox="0 0 200 230" aria-hidden="true" focusable="false">
+      <rect class="lg-l" x="82" y="182" width="15" height="42" rx="7" fill="#2E2344"/>
+      <rect class="lg-r" x="103" y="182" width="15" height="42" rx="7" fill="#2E2344"/>
+      <path class="arm-l" d="M72 124 L62 168" fill="none" stroke="#7851B8" stroke-width="13" stroke-linecap="round"/>
+      <path class="arm-r" d="M128 124 L156 86" fill="none" stroke="#7851B8" stroke-width="13" stroke-linecap="round"/>
+      <path class="torso" d="M70 116 Q100 106 130 116 L138 192 Q100 200 62 192 Z" fill="#7851B8"/>
+      <path d="M88 116 L100 132 L112 116" fill="none" stroke="#EAE1F7" stroke-width="4" stroke-linejoin="round"/>
+      <g class="head">
+        <circle cx="146" cy="34" r="13" fill="#3D2B1F"/>
+        <path d="M66 84 Q60 34 100 34 Q140 34 134 84 L140 128 Q100 140 60 128 Z" fill="#3D2B1F"/>
+        <ellipse cx="100" cy="86" rx="29" ry="32" fill="#F2C6A0"/>
+        <path d="M70 80 Q74 50 100 50 Q126 50 130 80 Q112 66 100 66 Q86 66 70 80 Z" fill="#3D2B1F"/>
+        <ellipse class="eye" cx="90" cy="88" rx="3.4" ry="4.4" fill="#2B1B3D"/>
+        <ellipse class="eye" cx="110" cy="88" rx="3.4" ry="4.4" fill="#2B1B3D"/>
+        <circle cx="82" cy="100" r="4.5" fill="#F09A9A" opacity=".5"/>
+        <circle cx="118" cy="100" r="4.5" fill="#F09A9A" opacity=".5"/>
+        <path class="mouth" d="M93 103 Q100 109 107 103" fill="none" stroke="#A8434B" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+      <g class="laptop">
+        <rect x="58" y="150" width="84" height="50" rx="7" fill="#211B2B"/>
+        <rect x="64" y="156" width="72" height="38" rx="4" fill="#B79EE6"/>
+        <rect x="46" y="200" width="108" height="9" rx="4.5" fill="#CDBDEB"/>
+      </g>
+    </svg>
+  </template>
+
+  <!-- Walking figure (desktop only) -->
+  <div id="walker" class="walker" aria-hidden="true">
+    <div class="avatar-slot" data-avatar data-pose="wave"></div>
+  </div>
+
+  <header class="nav">
+    <a class="logo" href="#home" aria-label="Kavyasri, back to top">KAVYASRI<span>.</span></a>
+    <nav id="menu" class="menu" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <a class="btn btn-sm" href="assets/Kavyasri_Resume.pdf" download>Resume</a>
+      <button id="theme" class="icon-btn" type="button" aria-label="Switch to dark mode">
+        <span class="moon" aria-hidden="true"></span>
+      </button>
+      <button id="burger" class="icon-btn burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero" data-walk="4" data-pose="wave">
+      <div class="hero-copy">
+        <p class="kicker rv" style="--d:.1s">Software Developer | AI Enthusiast | IT Roles</p>
+        <p class="greet rv" style="--d:.35s">Hey there! Glad you found your way here.</p>
+        <h1 class="rv" style="--d:.7s">I'm Kavyasri.</h1>
+        <p class="lead"><span id="typed" aria-label="Curious by nature. Developer by passion. Problem solver by choice."></span><span class="caret" aria-hidden="true"></span></p>
+        <p class="statement rv" style="--d:3s">Building technology that solves real problems.</p>
+        <p class="desc rv" style="--d:3.3s">I'm an Information Technology graduate interested in software engineering and artificial intelligence. I enjoy exploring ideas, experimenting with technologies, and turning concepts into practical applications.</p>
+        <p class="avail rv" style="--d:3.6s"><span class="dot" aria-hidden="true"></span>2026 Graduate | Open to IT and Software Engineering opportunities</p>
+        <div class="cta rv" style="--d:3.9s">
+          <a class="btn btn-ghost" href="#projects">Explore My Work</a>
+          <a class="btn" href="assets/Kavyasri_Resume.pdf" download>Download Resume</a>
+          <a class="btn btn-ghost" href="#contact">Let's Connect</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="tech t1">&lt;/&gt;</span>
+        <span class="tech t2">Python</span>
+        <span class="tech t3">AI</span>
+        <span class="tech t4">{ }</span>
+        <span class="tech t5">OpenCV</span>
+        <div class="avatar-slot hero-avatar" data-avatar data-pose="wave"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about" data-walk="66" data-pose="think">
+      <div class="about-text" data-reveal>
+        <h2>About me</h2>
+        <p class="lede">I'm an Information Technology graduate who enjoys exploring how technology can solve real-world problems. My interests span software development, backend engineering, and artificial intelligence. Through academic projects and technical experimentation, I've worked with different technologies and learned to approach problems from both development and problem-solving perspectives. I enjoy learning new tools, experimenting with ideas, and continuously improving the way I build software.</p>
+      </div>
+      <ul class="facts" data-reveal>
+        <li class="fact wide"><strong>2026 Graduate</strong><span>Kalasalingam Academy of Research and Education, 2022 to 2026</span></li>
+        <li class="fact"><strong>B.Tech</strong><span>Information Technology, CGPA 8.0</span></li>
+        <li class="fact"><strong>AI and CV</strong><span>Computer vision and AI projects</span></li>
+        <li class="fact"><strong>IEEE ICCES 2025</strong><span>Published research</span></li>
+        <li class="fact"><strong>Developer</strong><span>Software development enthusiast</span></li>
+      </ul>
+      <div class="beyond" data-reveal>
+        <h3>Beyond the Screen</h3>
+        <p>Photography, travel, Gaining Expirience, Analysing keep my curiosity and creativity going. Leading student communities taught me teamwork, and I like problems that have a practical payoff.</p>
+        <div class="tiles">
+          <span>Photography</span><span>Travel</span><span>Food</span><span>Commmunication</span><span>Personal growth</span><span>Student leadership</span><span>Teamwork</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills" data-walk="14" data-pose="type">
+      <div class="section-head" data-reveal>
+        <h2>Technical skills</h2>
+        <div class="filters" role="group" aria-label="Filter skills by category">
+          <button class="chip is-on" type="button" data-f="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-f="prog" aria-pressed="false">Programming</button>
+          <button class="chip" type="button" data-f="back" aria-pressed="false">Backend</button>
+          <button class="chip" type="button" data-f="front" aria-pressed="false">Frontend</button>
+          <button class="chip" type="button" data-f="ai" aria-pressed="false">AI / ML</button>
+          <button class="chip" type="button" data-f="cs" aria-pressed="false">CS Fundamentals</button>
+          <button class="chip" type="button" data-f="tools" aria-pressed="false">Tools</button>
+        </div>
+      </div>
+      <div class="skill-grid" data-reveal>
+        <button class="skill" type="button" data-cat="prog" data-desc="Core language for the computer vision projects and CareerPath AI's FastAPI services.">Python</button>
+        <button class="skill" type="button" data-cat="prog" data-desc="Java 21 is the language behind the CareerPath AI backend.">Java</button>
+        <button class="skill" type="button" data-cat="prog" data-desc="Queries and schema design from DBMS coursework and MySQL work.">SQL</button>
+        <button class="skill" type="button" data-cat="back" data-desc="Backend framework for CareerPath AI, with Spring Security and Spring Data JPA.">Spring Boot</button>
+        <button class="skill" type="button" data-cat="back" data-desc="The Python API layer in CareerPath AI.">FastAPI</button>
+        <button class="skill" type="button" data-cat="back" data-desc="Service endpoints for the CareerPath AI platform.">REST APIs</button>
+        <button class="skill" type="button" data-cat="back" data-desc="MySQL 8 database behind CareerPath AI.">MySQL</button>
+        <button class="skill" type="button" data-cat="back" data-desc="Caching and fast data access in the CareerPath AI stack.">Redis</button>
+        <button class="skill" type="button" data-cat="front" data-desc="Semantic markup for web pages, including this portfolio.">HTML</button>
+        <button class="skill" type="button" data-cat="front" data-desc="Responsive layouts with Grid and Flexbox.">CSS</button>
+        <button class="skill" type="button" data-cat="front" data-desc="Interactive front-end behaviour, part of the CareerPath AI stack.">JavaScript</button>
+        <button class="skill" type="button" data-cat="ai" data-desc="CNN models used in the missing-person identification research.">TensorFlow</button>
+        <button class="skill" type="button" data-cat="ai" data-desc="Frame capture and image processing in both computer vision projects.">OpenCV</button>
+        <button class="skill" type="button" data-cat="ai" data-desc="21-landmark hand tracking in GestureMotion.">MediaPipe</button>
+        <button class="skill" type="button" data-cat="ai" data-desc="128-dimensional face embeddings in the missing-person pipeline.">FaceNet</button>
+        <button class="skill" type="button" data-cat="ai" data-desc="Face detection step in the missing-person pipeline.">MTCNN</button>
+        <button class="skill" type="button" data-cat="ai" data-desc="Classifier that sits on top of the FaceNet embeddings.">SVM</button>
+        <button class="skill" type="button" data-cat="cs" data-desc="Used to speed up shape recognition in GestureMotion.">Data Structures &amp; Algorithms</button>
+        <button class="skill" type="button" data-cat="cs" data-desc="Modular, class-based architecture in GestureMotion.">OOP</button>
+        <button class="skill" type="button" data-cat="cs" data-desc="Database design, from coursework through MySQL projects.">DBMS</button>
+        <button class="skill" type="button" data-cat="cs" data-desc="Turning research questions and gesture problems into working systems.">Problem Solving</button>
+        <button class="skill" type="button" data-cat="tools" data-desc="Version control for every project.">Git</button>
+        <button class="skill" type="button" data-cat="tools" data-desc="Hosting the project repositories.">GitHub</button>
+        <button class="skill" type="button" data-cat="tools" data-desc="Fundamentals of automated build and deploy pipelines.">CI/CD</button>
+        <button class="skill" type="button" data-cat="tools" data-desc="Containerising CareerPath AI.">Docker</button>
+      </div>
+      <p id="skill-desc" class="skill-desc" aria-live="polite">Hover or tap a skill to see where I've used it.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects" data-walk="74" data-pose="examine">
+      <h2 data-reveal>Featured projects</h2>
+
+      <article class="proj proj-1" data-reveal>
+        <div class="proj-body">
+          <p class="pnum">Project 01</p>
+          <p class="cat">AI-powered career guidance platform</p>
+          <h3>CareerPath AI</h3>
+          <p>An AI-powered career guidance platform for students and fresh graduates. It evaluates users through assessments, identifies knowledge gaps, and recommends career paths and learning resources based on their performance.</p>
+          <p class="highlight">Assessment-driven recommendations instead of generic learning roadmaps.</p>
+          <ul class="chips"><li>Java 21</li><li>Spring Boot</li><li>Python</li><li>FastAPI</li><li>MySQL</li><li>Redis</li><li>LLM integration</li></ul>
+          <details>
+            <summary>Technical details</summary>
+            <h4>Problem</h4>
+            <p>Generic learning roadmaps don't reflect what a student already knows, so effort goes to the wrong skills.</p>
+            <h4>Implementation</h4>
+            <p>Spring Boot, Spring Security, and Spring Data JPA power the REST APIs over MySQL 8, with Redis and FastAPI services in Python. Users can accept an AI-recommended career or choose their own, then receive a skill-gap analysis and a learning roadmap. The platform covers 30+ career domains, with 1,500+ verification questions, mock tests, progress tracking, and an AI chatbot.</p>
+            <h4>Challenges and learning</h4>
+            <p>Connecting Java and Python services into one backend taught me how to design data for assessments and progress end to end.</p>
+          </details>
+          <div class="links"><a href="https://github.com/Kavyasrine/careerpath-ai" target="_blank" rel="noopener">GitHub repository</a></div>
+        </div>
+        <svg class="proj-art" viewBox="0 0 260 200" aria-hidden="true">
+          <path d="M30 150 C70 150 70 60 120 60 S180 130 230 40" fill="none" stroke="#7851B8" stroke-width="3" stroke-dasharray="6 7"/>
+          <circle cx="30" cy="150" r="12" fill="#EAE1F7" stroke="#542B91" stroke-width="3"/>
+          <circle cx="120" cy="60" r="12" fill="#EAE1F7" stroke="#542B91" stroke-width="3"/>
+          <circle cx="230" cy="40" r="16" fill="#542B91"/>
+          <text x="230" y="45" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">AI</text>
+        </svg>
+      </article>
+
+      <article class="proj proj-2" data-reveal>
+        <div class="proj-body">
+          <p class="pnum">Project 02</p>
+          <p class="cat">AI, computer vision, and research</p>
+          <h3>Missing-Person Identification System</h3>
+          <p>A facial recognition pipeline that helps identify potential matches for missing persons from CCTV footage. Published at IEEE ICCES 2025.</p>
+          <p class="highlight">96.2% accuracy across varying conditions, with a minimal training set.</p>
+          <ol class="pipe" aria-label="Computer vision pipeline">
+            <li>MTCNN<small>face detection</small></li>
+            <li>FaceNet<small>128-d embeddings</small></li>
+            <li>SVM<small>classification</small></li>
+          </ol>
+          <ul class="chips"><li>Python</li><li>TensorFlow</li><li>CNN</li><li>MTCNN</li><li>FaceNet</li><li>SVM</li><li>OpenCV</li></ul>
+          <details>
+            <summary>Technical details</summary>
+            <h4>Problem</h4>
+            <p>Searching CCTV footage by hand is slow, and lighting and camera angles make face matching unreliable.</p>
+            <h4>Implementation</h4>
+            <p>Faces are detected with MTCNN, resized to 160 × 160, and converted into 128-dimensional FaceNet embeddings. An SVM classifier, with a label encoder, then performs the matching, and OpenCV handles the video frames.</p>
+            <h4>Challenges and learning</h4>
+            <p>Keeping matches reliable across angles and lighting, with a small training set, taught me how to evaluate and write up a technical result for publication.</p>
+          </details>
+          <div class="links"><a href="https://github.com/Kavyasrine/FaceNet-based-Missing-Person-Detection" target="_blank" rel="noopener">GitHub repository</a></div>
+        </div>
+      </article>
+
+      <article class="proj proj-3" data-reveal>
+        <svg class="proj-art" viewBox="0 0 220 220" aria-hidden="true">
+          <g id="landmarks" fill="#B79EE6"></g>
+          <circle cx="112" cy="58" r="9" fill="#542B91"/>
+          <text x="112" y="32" text-anchor="middle" fill="#542B91" font-size="12" font-weight="700">landmark 8</text>
+        </svg>
+        <div class="proj-body">
+          <p class="pnum">Project 03</p>
+          <p class="cat">Computer vision and human-computer interaction</p>
+          <h3>GestureMotion Virtual Whiteboard</h3>
+          <p>A touch-free virtual whiteboard. Hand gestures draw, erase, and recognise shapes on a digital canvas in real time.</p>
+          <p class="highlight">95%+ accuracy across 15+ hand gestures.</p>
+          <ul class="chips"><li>Python</li><li>OpenCV</li><li>MediaPipe</li><li>NumPy</li><li>CNN gesture recognition</li></ul>
+          <details>
+            <summary>Technical details</summary>
+            <h4>Problem</h4>
+            <p>Whiteboards usually need a mouse or touchscreen. Touchless drawing is a more natural way to present and brainstorm.</p>
+            <h4>Implementation</h4>
+            <p>MediaPipe tracks 21 hand landmarks, and the index fingertip (landmark 8) drives drawing. A CNN classifies alphabet gestures, and an OOP, event-driven architecture manages canvas state and a 500+ frame replay engine. Shape recognition covers 12+ shapes at 92% precision, and handwriting beautification gave a 30% improvement. Processing runs at 30 FPS.</p>
+            <h4>Challenges and learning</h4>
+            <p>Keeping per-frame work light enough for real time pushed me toward efficient algorithms and clean state management.</p>
+          </details>
+          <div class="links"><a href="https://github.com/Kavyasrine/Gesture-Motion" target="_blank" rel="noopener">GitHub repository</a></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="achievements" data-walk="30" data-pose="celebrate">
+      <h2 data-reveal>Achievements and leadership</h2>
+      <ol class="timeline">
+        <li data-reveal><span class="when">2025 · Research</span><h3>IEEE ICCES 2025</h3><p>Missing-person identification research, peer-reviewed and published.</p></li>
+        <li data-reveal><span class="when">2025 · Certification</span><h3>Certified Generative AI Professional</h3><p>Oracle Cloud Infrastructure.</p></li>
+        <li data-reveal><span class="when">Leadership</span><h3>Student Outreach Coordinator</h3><p>Three consecutive terms.</p></li>
+        <li data-reveal><span class="when">Leadership</span><h3>Social Media Head and Event Manager</h3><p>IEEE CIS, KARE and ACM India.</p></li>
+        <li data-reveal><span class="when">Leadership</span><h3>Overall Student Lead, KARE</h3><p>Led 43+ technical and cultural events with 1,700+ cumulative attendees, driving 60% growth in community engagement.</p></li>
+        <li data-reveal><span class="when">Events</span><h3>Vintra Euphoria coordination</h3><p>Approximately 3,000 participants.</p></li>
+      </ol>
+    </section>
+
+    <!-- WHAT I BRING -->
+    <section id="bring" class="bring" data-walk="60" data-pose="wave">
+      <h2 data-reveal>What I bring</h2>
+      <div class="bento">
+        <div class="bt big" data-reveal><h3>Problem-solving mindset</h3><p>I start from the problem, then choose the tools.</p></div>
+        <div class="bt" data-reveal><h3>Technical curiosity</h3><p>I take things apart to see how they work.</p></div>
+        <div class="bt" data-reveal><h3>Project-based learning</h3><p>I learn fastest by building something real.</p></div>
+        <div class="bt wide" data-reveal><h3>Backend and application development</h3><p>Java, Spring Boot, FastAPI, and MySQL in working project builds.</p></div>
+        <div class="bt" data-reveal><h3>AI experimentation</h3><p>CNNs, FaceNet, and MediaPipe in systems that run.</p></div>
+        <div class="bt" data-reveal><h3>Team collaboration</h3><p>Coordinating events and communities with large groups.</p></div>
+        <div class="bt wide" data-reveal><h3>Leadership and communication</h3><p>Leading student communities and publishing research at IEEE ICCES 2025.</p></div>
+        <div class="bt" data-reveal><h3>Continuous learning</h3><p>I keep learning new tools and improving how I build software.</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact" data-walk="50" data-pose="bye">
+      <div class="contact-grid">
+        <div data-reveal>
+          <h2>Have an interesting opportunity or idea? Let's connect.</h2>
+          <ul class="links-list">
+            <li><a href="mailto:rkavyasri2808@gmail.com">rkavyasri2808@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/kavyasri-r-9785b825a" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Kavyasrine" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="assets/Kavyasri_Resume.pdf" download>Download resume (PDF)</a></li>
+          </ul>
+        </div>
+        <form id="contact-form" class="form" data-reveal>
+          <label>Name <input name="name" type="text" required autocomplete="name"></label>
+          <label>Email <input name="email" type="email" required autocomplete="email"></label>
+          <label>Message <textarea name="message" rows="5" required></textarea></label>
+          <button class="btn" type="submit">Send by email</button>
+          <p class="note">This opens your email app with the message ready to send.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Designed and built with curiosity by Kavyasri.</p>
+  </footer>
+</body>
+</html>
